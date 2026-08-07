@@ -24,10 +24,29 @@ const operators = {
     }
 }
 
-let numA = 0;
-let numB = 0;
-let operator ;
+
 
 function operate (numA, numB, operator) {
     return operators[operator](numA, numB);
 }
+
+
+let numA = 0;
+let numB = 0;
+let operator ;
+
+const display = document.querySelector(".display");
+const numberButtons = document.querySelectorAll(".number");
+
+numberButtons.forEach((numberButton) => {
+    numberButton.addEventListener( "click", (e) => {
+        numA = e.target.textContent;
+        display.textContent = e.target.textContent;
+    })
+});
+
+
+
+
+
+
